@@ -40,14 +40,20 @@ public class DoublyLinkedList<T> {
 
     private Link<T> first;
     private Link<T> last;
+    private int size;
 
     public DoublyLinkedList() {
         first = null;
         last = null;
+        size = 0;
     }
 
     public boolean isEmpty () {
         return first == null ? true : false;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public void insertFirst(T value) {
@@ -59,6 +65,7 @@ public class DoublyLinkedList<T> {
             first.getPrev().setNext(first);
             first = first.getPrev();
         }
+        size++;
     }
 
     public void insertLast(T value) {
@@ -70,6 +77,7 @@ public class DoublyLinkedList<T> {
             last.getNext().setPrev(last);
             last = last.getNext();
         }
+        size++;
     }
 
     public boolean insertAfter(T value, T after) {
@@ -84,6 +92,7 @@ public class DoublyLinkedList<T> {
                 found.getNext().setPrev(new_link);
             }
             found.setNext(new_link);
+            size++;
             return true;
         } else {
             return false;
@@ -102,6 +111,7 @@ public class DoublyLinkedList<T> {
                 found.getPrev().setNext(new_link);
             }
             found.setPrev(new_link);
+            size++;
             return true;
         } else {
             return false;
@@ -116,6 +126,10 @@ public class DoublyLinkedList<T> {
         return iterator;
     }
 
+    public T getFirst() {
+        return isEmpty() ? null : first.getValue();
+    }
+
     public T deleteFirst() {
         T val = null;
         if (!isEmpty()) {
@@ -127,8 +141,13 @@ public class DoublyLinkedList<T> {
                 first.getNext().setPrev(null);
                 first = first.getNext();
             }
+            size--;
         }
         return val;
+    }
+
+    public T getLast() {
+        return isEmpty() ? null : last.getValue();
     }
 
     public T deleteLast() {
@@ -142,6 +161,7 @@ public class DoublyLinkedList<T> {
                 last.getPrev().setNext(null);
                 last = last.getPrev();
             }
+            size--;
         }
         return val;
     }
@@ -164,6 +184,7 @@ public class DoublyLinkedList<T> {
                     iterator.getNext().setPrev(iterator.getPrev());
                 }
             }
+            size--;
             return true;
         } else {
             return false;

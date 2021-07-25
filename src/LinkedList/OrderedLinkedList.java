@@ -30,19 +30,26 @@ public class OrderedLinkedList<T extends Comparable> {
 
     private Link<T> first;
     private boolean mode;
+    private int size;
 
     public OrderedLinkedList() {
-        first = null;
+        this.first = null;
         this.mode = false;
+        size = 0;
     }
 
     public OrderedLinkedList(boolean mode) {
-        first = null;
+        this.first = null;
         this.mode = mode;
+        size = 0;
     }
 
     public boolean isEmpty () {
         return first == null ? true : false;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public void insert(T value) {
@@ -70,11 +77,12 @@ public class OrderedLinkedList<T extends Comparable> {
                 first = temp;
             }
         }
+        size++;
     }
 
 
     public T getFirst() {
-        return first == null ? null : first.getValue();
+        return isEmpty() ? null : first.getValue();
     }
 
 
@@ -91,6 +99,7 @@ public class OrderedLinkedList<T extends Comparable> {
         if (!isEmpty()) {
             temp = first.getValue();
             first = first.getNext();
+            size--;
         }
         return temp;
     }

@@ -29,20 +29,26 @@ public class SinglyLinkedList<T> {
     }
 
     private Link<T> first;
-
+    private int size;
 
     public SinglyLinkedList() {
         first = null;
+        size = 0;
     }
 
     public boolean isEmpty () {
         return first == null ? true : false;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public void insertFirst(T value) {
         Link<T> new_link = new Link<>(value);
         new_link.setNext(first);
         first = new_link;
+        size++;
     }
 
     public boolean insertAfter(T value, T after) {
@@ -51,6 +57,7 @@ public class SinglyLinkedList<T> {
             Link<T> new_link = new Link<T>(value);
             new_link.setNext(found.getNext());
             found.setNext(new_link);
+            size++;
             return true;
         } else {
             return false;
@@ -65,11 +72,16 @@ public class SinglyLinkedList<T> {
         return iterator;
     }
 
+    public T getFirst() {
+        return isEmpty() ? null : first.getValue();
+    }
+
     public T deleteFirst() {
         T val = null;
         if (!isEmpty()) {
             val = first.getValue();
             first = first.getNext();
+            size--;
         }
         return val;
     }
@@ -85,6 +97,7 @@ public class SinglyLinkedList<T> {
                 first = first.getNext();
             else
                 prev.setNext(iterator.getNext());
+            size--;
             return true;
         } else {
             return false;
