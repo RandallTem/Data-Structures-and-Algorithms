@@ -4,18 +4,9 @@ import Tests.*;
 public class Test {
 
     public static void main(String[] args) {
-    /*    Test_LinkedLists ll = new Test_LinkedLists();
+        Test_Trees tt = new Test_Trees();
         try {
-            ll.testSinglyLinkedList();
-        } catch (Exception e) {
-            System.out.println("Wrong input value. Quitting...");
-            System.out.println(e);
-        }
-
-    } */
-        Test_Queues tq = new Test_Queues();
-        try {
-            tq.testPriorityQueue(true);
+            tt.testBinarySearchTree();
         } catch (Exception e) {
             System.out.println("Wrong input value. Quitting...");
             System.out.println(e);

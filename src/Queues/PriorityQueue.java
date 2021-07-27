@@ -5,16 +5,13 @@ import LinkedList.OrderedLinkedList;
 public class PriorityQueue<T extends Comparable> {
 
     private OrderedLinkedList<T> pqueue;
-    private boolean mode;
 
     public PriorityQueue() {
-        this.pqueue = new OrderedLinkedList<T>();
-        this.mode = false;
+        this.pqueue = new OrderedLinkedList<T>(false);
     }
 
     public PriorityQueue(boolean mode) {
-        this.pqueue = new OrderedLinkedList<T>();
-        this.mode = mode;
+        this.pqueue = new OrderedLinkedList<T>(mode);
     }
 
     public boolean isEmpty() {
