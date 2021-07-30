@@ -55,35 +55,35 @@ public class BinarySearchTree<T extends Comparable> {
     }
 
     public Node find(T value) {
-        Node<T> iterator = root;
-        while (iterator != null && !iterator.getValue().equals(value)) {
-            if (value.compareTo(iterator.getValue()) > 0)
-                iterator = iterator.getRightChild();
+        Node<T> node = root;
+        while (node != null && !node.getValue().equals(value)) {
+            if (value.compareTo(node.getValue()) > 0)
+                node = node.getRightChild();
             else
-                iterator = iterator.getLeftChild();
+                node = node.getLeftChild();
         }
-        return iterator;
+        return node;
     }
 
     public void insert(T value) {
         if (isEmpty()) {
             root = new Node<>(value);
         } else {
-            Node iterator = root;
-            while (iterator != null) {
-                if (value.compareTo(iterator.getValue()) > 0) {
-                    if (iterator.getRightChild() == null) {
-                        iterator.setRightChild(new Node<>(value));
+            Node node = root;
+            while (node != null) {
+                if (value.compareTo(node.getValue()) > 0) {
+                    if (node.getRightChild() == null) {
+                        node.setRightChild(new Node<>(value));
                         break;
                     } else {
-                        iterator = iterator.getRightChild();
+                        node = node.getRightChild();
                     }
                 } else {
-                    if (iterator.getLeftChild() == null) {
-                        iterator.setLeftChild(new Node<>(value));
+                    if (node.getLeftChild() == null) {
+                        node.setLeftChild(new Node<>(value));
                         break;
                     } else {
-                        iterator = iterator.getLeftChild();
+                        node = node.getLeftChild();
                     }
                 }
             }
@@ -149,11 +149,11 @@ public class BinarySearchTree<T extends Comparable> {
     public T getMin() {
         T min = null;
         if (!isEmpty()) {
-            Node<T> iterator = root;
-            while (iterator.leftChild != null) {
-                iterator = iterator.getLeftChild();
+            Node<T> node = root;
+            while (node.leftChild != null) {
+                node = node.getLeftChild();
             }
-            min = iterator.getValue();
+            min = node.getValue();
         }
         return min;
     }
@@ -161,11 +161,11 @@ public class BinarySearchTree<T extends Comparable> {
     public T getMax() {
         T max = null;
         if (!isEmpty()) {
-            Node<T> iterator = root;
-            while (iterator.rightChild != null) {
-                iterator = iterator.getRightChild();
+            Node<T> node = root;
+            while (node.rightChild != null) {
+                node = node.getRightChild();
             }
-            max = iterator.getValue();
+            max = node.getValue();
         }
         return max;
     }
