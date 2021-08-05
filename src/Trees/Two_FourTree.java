@@ -381,16 +381,4 @@ public class Two_FourTree<T extends Comparable> {
     public int getSize() {
         return size;
     }
-
-    public static void main(String[] args) {
-        Two_FourTree<Integer> tr = new Two_FourTree<>();
-        tr.insert(15);
-        tr.insert(100);
-        tr.insert(-100);
-        tr.delete(3);
-
-
-    }
-
-
 }
