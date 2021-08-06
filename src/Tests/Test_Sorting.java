@@ -2,6 +2,8 @@ package Tests;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
+
 import Sorting.*;
 
 public class Test_Sorting {
@@ -14,7 +16,12 @@ public class Test_Sorting {
         Shell_Sort shell_sort = new Shell_Sort();
         Fast_Sort fast_sort = new Fast_Sort();
         Radix_Sort radix_sort = new Radix_Sort();
-        Long[] test_array = {5L, 1L, -15L, 7L, 0L, 0L, 5L, -20L, 53L, -53L, 10000L, -2L, -3L, -4L, 1L};
+        Heap_Sort heap_sort = new Heap_Sort();
+        Long[]  test_array = new Long[15];
+        Random rn = new Random();
+        for (int i = 0; i < 15; i++) {
+            test_array[i] = rn.nextLong() % 1000;
+        }
 
         ArrayList<Long> test_list = new ArrayList<>(Arrays.asList(test_array));
         bubble_sort.bubbleSort(test_list);
@@ -43,6 +50,11 @@ public class Test_Sorting {
         test_list = new ArrayList<>(Arrays.asList(test_array));
         radix_sort.radixSort(test_list);
         System.out.println(test_list);
+
+        test_list = new ArrayList<>(Arrays.asList(test_array));
+        heap_sort.heapSort(test_list);
+        System.out.println(test_list);
+
     }
 
 }

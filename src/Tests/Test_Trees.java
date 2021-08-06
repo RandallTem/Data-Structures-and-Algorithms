@@ -256,4 +256,39 @@ public class Test_Trees {
             }
         }
     }
+
+    public void testHeap() {
+        Heap<Integer> heap = new Heap<>();
+        Scanner scanner = new Scanner(System.in);
+        int option = -1;
+        System.out.println("Choose option:");
+        System.out.println("0. Exit\n1. Insert value\n2. Delete\n" +
+                "3. Show heap\n4. Get size");
+        Integer value;
+        while (option != 0) {
+            option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    System.out.println("Enter value to insert");
+                    value = scanner.nextInt();
+                    heap.insert(value);
+                    System.out.println("Value inserted");
+                    break;
+                case 2:
+                    System.out.println("Value deleted: " + heap.delete());
+                    break;
+                case 3:
+                    heap.showHeap();
+                    break;
+                case 4:
+                    System.out.println("Heap size = " + heap.getSize());
+                    break;
+                case 0:
+                    System.out.println("Quitting...");
+                    return;
+                default:
+                    return;
+            }
+        }
+    }
 }
