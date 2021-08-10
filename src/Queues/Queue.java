@@ -4,11 +4,15 @@ import LinkedList.DoublyLinkedList;
 
 public class Queue<T> {
 
-    DoublyLinkedList<T> queue;
+    private DoublyLinkedList<T> queue;
+
+    //constructor:
 
     public Queue() {
         queue = new DoublyLinkedList<>();
     }
+
+    //public:
 
     public boolean isEmpty() {
         return queue.isEmpty();

@@ -4,11 +4,15 @@ import LinkedList.SinglyLinkedList;
 
 public class Stack<T> {
 
-    SinglyLinkedList<T> stack;
+    private SinglyLinkedList<T> stack;
+
+    //constructor:
 
     public Stack() {
         stack = new SinglyLinkedList<>();
     }
+
+    //public:
 
     public boolean isEmpty() {
         return stack.isEmpty();

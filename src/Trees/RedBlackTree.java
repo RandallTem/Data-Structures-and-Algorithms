@@ -63,19 +63,12 @@ public class RedBlackTree<T extends Comparable> {
     private Node<T> root;
     private int size;
 
+    //constructor:
+
     public RedBlackTree() {
         root = null;
         size = 0;
     }
-
-    public Node getRoot() {
-        return root;
-    }
-
-    public boolean isEmpty() {
-        return root == null ? true : false;
-    }
-
 
     //private:
 
@@ -275,6 +268,14 @@ public class RedBlackTree<T extends Comparable> {
 
 
     //public:
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public boolean isEmpty() {
+        return root == null ? true : false;
+    }
 
     public void insert(T value) {
         if (isEmpty()) {

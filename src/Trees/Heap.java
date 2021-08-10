@@ -49,13 +49,6 @@ public class Heap<T extends Comparable> {
     private void pushDown(int index) {
         T temp;
         if (!mode) {
-            /*while ((2 * index + 1) < heap.size() && heap.get(index).compareTo(heap.get((2 * index) + 1)) < 0) {
-                temp = heap.get(index);
-                heap.set(index, heap.get((2 * index) + 1));
-                heap.set((2 * index) + 1, temp);
-                index = (2 * index) + 1;
-            }*/
-
             while(true) {
                 if ((2 * index + 1) >= heap.size())
                     break;

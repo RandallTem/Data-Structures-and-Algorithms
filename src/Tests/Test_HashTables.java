@@ -2,6 +2,7 @@ package Tests;
 
 import HashTables.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test_HashTables {

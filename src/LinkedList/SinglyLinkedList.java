@@ -31,10 +31,14 @@ public class SinglyLinkedList<T> {
     private Link<T> first;
     private int size;
 
+    //constructor:
+
     public SinglyLinkedList() {
         first = null;
         size = 0;
     }
+
+    //public:
 
     public boolean isEmpty () {
         return first == null ? true : false;

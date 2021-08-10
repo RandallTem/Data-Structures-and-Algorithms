@@ -80,6 +80,8 @@ public class Two_FourTree<T extends Comparable> {
     private Node<T> root;
     private int size;
 
+    //constructor:
+
     public Two_FourTree() {
         root = null;
         size = 0;

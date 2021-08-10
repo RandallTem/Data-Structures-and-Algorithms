@@ -32,6 +32,8 @@ public class OrderedLinkedList<T extends Comparable> {
     private boolean mode;
     private int size;
 
+    //constructors:
+
     public OrderedLinkedList() {
         this.first = null;
         this.mode = false;
@@ -43,6 +45,8 @@ public class OrderedLinkedList<T extends Comparable> {
         this.mode = mode;
         size = 0;
     }
+
+    //public:
 
     public boolean isEmpty () {
         return first == null ? true : false;

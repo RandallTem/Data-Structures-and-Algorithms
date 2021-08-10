@@ -41,6 +41,8 @@ public class AVLTree<T extends Comparable> {
     private Node<T> root;
     private int size;
 
+    //constructor:
+
     public AVLTree() {
         root = null;
         size = 0;

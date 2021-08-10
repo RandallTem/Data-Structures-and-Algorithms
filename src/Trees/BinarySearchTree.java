@@ -41,10 +41,14 @@ public class BinarySearchTree<T extends Comparable> {
     private Node<T> root;
     private int size;
 
+    //constructor:
+
     public BinarySearchTree() {
         root = null;
         size = 0;
     }
+
+    //public:
 
     public Node getRoot() {
         return root;

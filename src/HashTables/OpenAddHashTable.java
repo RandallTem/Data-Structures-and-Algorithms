@@ -1,7 +1,6 @@
 package HashTables;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class OpenAddHashTable<T> {
     private double load_factor;

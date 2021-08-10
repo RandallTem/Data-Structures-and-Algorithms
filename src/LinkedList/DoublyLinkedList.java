@@ -42,11 +42,15 @@ public class DoublyLinkedList<T> {
     private Link<T> last;
     private int size;
 
+    //constructor:
+
     public DoublyLinkedList() {
         first = null;
         last = null;
         size = 0;
     }
+
+    //public:
 
     public boolean isEmpty () {
         return first == null ? true : false;
